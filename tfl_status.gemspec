@@ -7,10 +7,9 @@ Gem::Specification.new do |spec|
   spec.name          = "tfl_status"
   spec.version       = TflStatus::VERSION
   spec.authors       = ["Nicholas Jones"]
-  spec.email         = ["TODO: Write your email address"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
-  spec.homepage      = ""
+  spec.email         = ["me@nicholasjon.es"]
+  spec.summary       = "A very basic TFL line status checker."
+  spec.homepage      = "https://github.com/nick-jones/tfl_status"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
