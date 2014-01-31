@@ -19,4 +19,4 @@ a little "off". Please also note that terminal emulators often allow you to adju
 
 ## Screenshot
 
-![Screenshot](http://i.imgur.com/t4g1wW6.png)
+![Screenshot](http://i.imgur.com/dfdKhtw.png)
