@@ -2,7 +2,7 @@
 
 This is a very basic TFL status checker, written in Ruby. It utilises the [TubeUpdates API](http://tubeupdates.com/documentation/)
 to fetch up to date line status information. The CLI components are built with [Thor](http://whatisthor.com/), and the output is
-somewhat aided by the (Colorize)[https://github.com/fazibear/colorize] gem.
+somewhat aided by the [Colorize](https://github.com/fazibear/colorize) gem.
 
 ## Running
 
