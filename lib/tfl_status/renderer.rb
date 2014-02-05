@@ -25,9 +25,9 @@ module TflStatus
       pad_size_name = locate_longest(lines, "name").length + 1
       pad_size_status = locate_longest(lines, "status").length + 1
 
-      lines.each { |line|
+      lines.each do |line|
         display_line(line, pad_size_name, pad_size_status)
-      }
+      end
     end
 
     def display_line(line, pad_size_name, pad_size_status)
