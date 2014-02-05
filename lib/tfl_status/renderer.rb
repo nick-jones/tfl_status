@@ -20,6 +20,8 @@ module TflStatus
 
     def display(statuses)
       lines = statuses["lines"];
+      lines.sort_by! { |line| [line["status"] != "good service" ? 0 : 1, line["name"]] }
+
       pad_size_name = locate_longest(lines, "name").length + 1
       pad_size_status = locate_longest(lines, "status").length + 1
 
