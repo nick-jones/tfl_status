@@ -7,9 +7,9 @@ somewhat aided by the [Colorize](https://github.com/fazibear/colorize) gem. It i
 
 ## Running
 
-You can simple execute the application by running `./bin/tfl`. Alternatively, build a gem, and install it; assuming the gem
-executable directory is in your path, you can simple run `tfl`. If you wish to check an individual line, run
-`tfl line [LINE_NAME]` -- for example, `tfl line bakerloo`.
+You can simple execute the application by running `./bin/tfl-status`. Alternatively, build a gem, and install it; assuming the gem
+executable directory is in your path, you can simple run `tfl-status`. If you wish to check an individual line, run
+`tfl-status check <line>` -- for example, `tfl-status check bakerloo`.
 
 ## Output
 

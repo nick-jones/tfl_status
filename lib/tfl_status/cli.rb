@@ -11,19 +11,14 @@ module TflStatus
 
     package_name "TFL Status Checker"
 
-    desc "all", "Checks the status of all TFL lines"
-    def all
-      TflStatus::Checker.run("all")
-    end
-
-    desc "line LINE_NAME", "Checks the status of a TFL line, by name"
-    def line(name, *names)
-      lines = names.push(name)
+    desc "check [<line-1> <line-2>..]", "Checks the status of TFL lines"
+    def check(*lines)
+      lines ||= "all"
       verify_lines(lines)
       TflStatus::Checker.run(lines)
     end
 
-    default_task :all
+    default_task :check
 
     protected
 
