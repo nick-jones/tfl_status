@@ -4,7 +4,7 @@ require "uri"
 require "htmlentities"
 
 module TflStatus
-  BaseUrl = "http://api.tubeupdates.com"
+  BASE_URL = "http://api.tubeupdates.com"
 
   class Fetcher
     def retrieve(*lines)
@@ -16,7 +16,7 @@ module TflStatus
     end
 
     def build_uri(lines)
-      URI.parse("#{BaseUrl}/?method=get.status&lines=#{lines.join(",")}&format=json")
+      URI.parse("#{BASE_URL}/?method=get.status&lines=#{lines.join(",")}&format=json")
     end
 
     def make_request(uri)

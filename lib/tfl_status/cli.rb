@@ -2,12 +2,11 @@ require "thor"
 
 module TflStatus
   class CLI < Thor
-    ValidLineArguments = [
-      "bakerloo", "central", "circle", "district", "docklands",
-      "docklands", "hammersmithcity", "jubilee", "metropolitan",
-      "northern", "piccadilly", "overground", "tube", "victoria",
-      "waterloocity"
-    ]
+    VALID_LINES = %w(
+      bakerloo central circle district docklands docklands
+      hammersmithcity jubilee metropolitan northern
+      piccadilly overground tube victoria waterloocity
+    )
 
     package_name "TFL Status Checker"
 
@@ -23,7 +22,7 @@ module TflStatus
     protected
 
     def verify_lines(lines)
-      lines -= ValidLineArguments
+      lines -= VALID_LINES
       raise Thor::Error, "Invalid lines supplied: '#{lines.join(",")}'." unless lines.length == 0
     end
   end

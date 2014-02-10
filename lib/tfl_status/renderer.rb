@@ -2,7 +2,7 @@ require "colorize"
 
 module TflStatus
   class Renderer
-    LineColours = {
+    LINE_COLOURS = {
       "bakerloo" => :light_red,
       "central" => :red,
       "circle" => :yellow,
@@ -45,7 +45,7 @@ module TflStatus
       
       profile = {}
       profile[:color] = :white
-      profile[:background] = LineColours[id]
+      profile[:background] = LINE_COLOURS[id]
       profile[:mode] = :bold
 
       profile
