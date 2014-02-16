@@ -18,10 +18,18 @@ module TflStatus
       "waterloocity" => :light_cyan
     }
 
-    def display(statuses)
+    def display(statuses, show_reasons)
       lines = statuses["lines"]
       lines.sort_by! { |line| [line["status"] != "good service" ? 0 : 1, line["name"]] }
 
+      display_lines(lines)
+
+      if show_reasons
+        display_reasons(lines)
+      end
+    end
+
+    def display_lines(lines)
       pad_size_name = locate_longest(lines, "name").length + 1
       pad_size_status = locate_longest(lines, "status").length + 1
 
@@ -63,6 +71,24 @@ module TflStatus
       end
 
       profile
+    end
+
+    def display_reasons(lines)
+      puts ""
+      puts "Reasons".underline
+
+      lines.each do |line|
+        display_reason(line) unless line["status"] == "good service"
+      end
+    end
+
+    def display_reason(line)
+      id = line["id"]
+      name = line["name"]
+      name_coloured = name.colorize(:color => LINE_COLOURS[id], :mode => :bold)
+      messages = line["messages"].join(" ")
+
+      puts "#{name_coloured}: #{messages}"
     end
 
     def locate_longest(lines, field)

@@ -11,10 +11,11 @@ module TflStatus
     package_name "TFL Status Checker"
 
     desc "check [<line-1> <line-2>..]", "Checks the status of TFL lines"
+    method_options :reasons => :boolean
     def check(*lines)
       lines ||= "all"
       verify_lines(lines)
-      TflStatus::Checker.run(lines)
+      TflStatus::Checker.run(lines, options[:reasons])
     end
 
     default_task :check
